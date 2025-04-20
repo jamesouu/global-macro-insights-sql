@@ -1,29 +1,42 @@
-# global-macro-insights-sql
-SQL-powered dashboard project for analyzing macroeconomic indicators across countries
+# Global Macro Insights Dashboard (SQL-Powered)
 
-# 🌍 Global Macro Insights Dashboard (SQL-Powered)
+This project explores long-term inflation trends across key global economies using SQL.
 
-## 📊 Project Description
+## 🌍 Countries Covered
+- United Kingdom
+- United States
+- Euro Area
+- Japan
+- China
 
-This project showcases a SQL-powered approach to extracting actionable macroeconomic insights from large-scale international data. The goal is to simulate how macro hedge funds would query, analyze, and visualize data to support investment decisions.
+## 📅 Time Period
+January 2000 – March 2025
 
-## 🚀 Core Features
+## 📦 Dataset
+Source: [OECD Inflation (CPI)](https://data-explorer.oecd.org/)
 
-- Compare inflation and interest rates across countries and time
-- Analyze GDP growth trends and recession warnings
-- Rank countries by risk signals (high inflation, negative growth, etc.)
-- Time-series aggregation with SQL (using `date_trunc`, `window functions`)
-- Use of `CASE WHEN`, `JOIN`, `GROUP BY CUBE/ROLLUP` for financial storytelling
+File: `data/inflation_oecd_2000_2025.csv`
 
-## 🔍 Example Queries
+## 🧠 Project Objectives
+- Build inflation time series using SQL
+- Identify periods of inflation shocks
+- Compare cross-country trends
+- Create an SQL-driven macro dashboard
 
-1. **Year-over-Year Inflation Trends**
+## 🛠️ SQL Scripts
+- `create_inflation_table.sql`: Define and load the dataset
+- `explore_trends.sql`: Visualize and rank inflation periods
+- `monthly_summary.sql`: Aggregate data for dashboarding
 
-```sql
-SELECT country, EXTRACT(YEAR FROM date) AS year,
-       ROUND(AVG(inflation_rate), 2) AS avg_inflation
-  FROM macro_data
- WHERE indicator = 'Inflation'
- GROUP BY country, year
- ORDER BY avg_inflation DESC;
+## 📊 Sample Insight
+> "Euro Area inflation peaked in October 2022 at 10.6%, while Japan remained below 4%. China experienced the softest inflation shock post-COVID."
 
+## 🔍 Analysis Highlights
+- Monthly inflation trend comparisons
+- Top-3 inflation spikes per country
+- Inflation convergence/divergence heatmap potential
+
+## 📈 Technologies
+- PostgreSQL
+- SQL analytics
+- Pandas (optional visualization)
