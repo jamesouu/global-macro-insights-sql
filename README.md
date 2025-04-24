@@ -1,42 +1,49 @@
-# Global Macro Insights Dashboard (SQL-Powered)
+# 🌍 Global Macro Insights Dashboard (SQL-Powered)
 
-This project explores long-term inflation trends across key global economies using SQL.
+This project provides a structured SQL-powered dashboard for analyzing long-term inflation trends across five key economies: the **United States**, **United Kingdom**, **Euro Area**, **Japan**, and **China** (2000–2025). Built as a data-driven macroeconomic insight tool, the project applies real-world hedge fund logic to understand inflation cycles and their implications across geographies.
 
-## 🌍 Countries Covered
-- United Kingdom
-- United States
-- Euro Area
-- Japan
-- China
+## 📈 Project Motivation
 
-## 📅 Time Period
-January 2000 – March 2025
+Inflation plays a central role in global macro investing. Understanding its long-term patterns, volatility, and cross-country divergences provides insight into central bank actions, interest rate cycles, currency movements, and asset pricing. This project is designed to:
+- Demonstrate SQL skills in a real-world hedge fund context
+- Highlight the importance of inflation data in macro strategy
+- Serve as a foundation for future multi-asset dashboard development
 
-## 📦 Dataset
-Source: [OECD Inflation (CPI)](https://data-explorer.oecd.org/)
+## 🧰 Tech Stack
+- **SQL** (PostgreSQL, pgAdmin)
+- **OECD data** (CSV import and transformation)
+- **GitHub** (for version control, visibility, and collaboration)
+- *(Optional extensions planned)*: Python/Streamlit or Tableau for visualization
 
-File: `data/inflation_oecd_2000_2025.csv`
+## 🗂️ Project Structure
+├── data/
+│   ├── raw/                    # Original OECD inflation CSVs
+│   └── cleaned/                # Cleaned and standardized tables
+├── sql/
+│   ├── 01_data_cleaning.sql    # Scripts to clean and import OECD data
+│   ├── 02_feature_engineering.sql # Calculating YoY/MoM, moving averages, z-scores
+│   └── 03_macro_insights.sql   # Key queries for macro insights & visualizations
+├── outputs/
+│   └── inflation_summary.csv   # Example query output tables
+└── README.md
 
-## 🧠 Project Objectives
-- Build inflation time series using SQL
-- Identify periods of inflation shocks
-- Compare cross-country trends
-- Create an SQL-driven macro dashboard
+## 🔍 Key Analytical Features
+- **Inflation Comparison**: YoY/MoM rates across countries
+- **Trend Analysis**: Moving averages and inflation regimes
+- **Volatility Insight**: Standard deviation over time
+- **Macro Interpretation**: Cross-country divergence and convergence
 
-## 🛠️ SQL Scripts
-- `create_inflation_table.sql`: Define and load the dataset
-- `explore_trends.sql`: Visualize and rank inflation periods
-- `monthly_summary.sql`: Aggregate data for dashboarding
+## 📅 Coverage
+- **Timeframe**: 2000–03 to 2025–03
+- **Frequency**: Monthly CPI data
+- **Countries**: US, UK, Euro Area, Japan, China
 
-## 📊 Sample Insight
-> "Euro Area inflation peaked in October 2022 at 10.6%, while Japan remained below 4%. China experienced the softest inflation shock post-COVID."
+## 🔮 Future Roadmap
+- 📊 Add visualization layer (Streamlit / Tableau)
+- 🌐 Expand to FX, rates, and commodity datasets
+- 📈 Create macro dashboards for real-time policy and asset-class insight
 
-## 🔍 Analysis Highlights
-- Monthly inflation trend comparisons
-- Top-3 inflation spikes per country
-- Inflation convergence/divergence heatmap potential
-
-## 📈 Technologies
-- PostgreSQL
-- SQL analytics
-- Pandas (optional visualization)
+## 🤝 Why It Matters (For Hedge Funds)
+- Enables systematic **macro trend detection**
+- Supports **rate cycle timing**, **currency valuation**, and **positioning**
+- Forms a core part of a **global macro strategy toolkit**
