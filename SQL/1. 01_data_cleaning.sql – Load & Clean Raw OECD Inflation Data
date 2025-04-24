@@ -1,0 +1,29 @@
+
+-- Step 1: Create raw import table (if not done via GUI)
+CREATE TABLE raw_inflation_data (
+    country_code TEXT,
+    country_name TEXT,
+    indicator TEXT,
+    subject TEXT,
+    measure TEXT,
+    frequency TEXT,
+    time_period TEXT,
+    value NUMERIC,
+    flags TEXT
+);
+
+-- Step 2: Load CSV via pgAdmin or `\copy` command
+
+-- Step 3: Clean and standardize
+CREATE TABLE inflation_clean AS
+SELECT
+    country_name AS country,
+    TO_DATE(time_period, 'YYYY-MM') AS date,
+    value::NUMERIC AS inflation_rate
+FROM raw_inflation_data
+WHERE
+    indicator = 'CPI'
+    AND subject = 'TOT'   -- Total CPI
+    AND measure = 'IX'    -- Index
+    AND frequency = 'M'   -- Monthly
+    AND country_name IN ('United States', 'United Kingdom', 'Euro Area', 'Japan', 'China');
