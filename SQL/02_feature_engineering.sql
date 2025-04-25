@@ -1,4 +1,4 @@
--- 02_feature_engineering.sql (Safe version with zero-division checks)
+-- 02_feature_engineering.sql 
 
 CREATE TABLE inflation_features AS
 SELECT
@@ -6,7 +6,7 @@ SELECT
     date,
     inflation_rate,
 
-    -- Month-over-month % change (safe)
+    -- Month-over-month % change 
     CASE 
         WHEN LAG(inflation_rate) OVER (PARTITION BY country ORDER BY date) IS NOT NULL
              AND LAG(inflation_rate) OVER (PARTITION BY country ORDER BY date) != 0
@@ -15,7 +15,7 @@ SELECT
         ELSE NULL
     END AS mom_change,
 
-    -- Year-over-year % change (safe)
+    -- Year-over-year % change 
     CASE 
         WHEN LAG(inflation_rate, 12) OVER (PARTITION BY country ORDER BY date) IS NOT NULL
              AND LAG(inflation_rate, 12) OVER (PARTITION BY country ORDER BY date) != 0
@@ -30,4 +30,4 @@ SELECT
     -- 12-month rolling standard deviation
     STDDEV(inflation_rate) OVER (PARTITION BY country ORDER BY date ROWS BETWEEN 11 PRECEDING AND CURRENT ROW) AS stddev_12m
 
-FROM inflation_clean;
+FROM inflation_cleaned;
