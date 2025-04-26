@@ -37,4 +37,4 @@ df_final = df_melted[['country', 'date', 'inflation_rate']].dropna()
 # Save as a clean CSV
 df_final.to_csv('inflation_clean.csv', index=False)
 
-print("✅ inflation_clean.csv ready!")
+print("inflation_clean.csv ready!")
