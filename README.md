@@ -1,28 +1,29 @@
 # Global Inflation Analysis (2005-2025)
 
-## Overview
-This project analyzes inflation dynamics for China, United States, United Kingdom, Germany, and Japan from 2005 to 2025 using IMF CPI data. It builds a PostgreSQL database, calculates key inflation features (MoM, YoY, 3M MA, 12M Volatility), and visualizes trends through Python.
+## 📚 Overview
+This project analyzes inflation dynamics for China, United States, United Kingdom, Germany, and Japan from 2005 to 2025 using IMF CPI data. It builds a PostgreSQL database, calculates key inflation features (MoM %, YoY %, 3-Month Moving Average, 12-Month Volatility), and visualizes the trends using Python.
 
-## Project Structure
-- `/data/` — Source CSV
-- `/sql/` — SQL scripts for database creation
-- `/charts/` — Visualization outputs
-- `/inflation_analysis/` — Python analysis code
+## 📂 Project Structure
+- `/data/` — Cleaned inflation data (inflation_clean.csv)
+- `/sql/` — SQL scripts for database creation and inflation feature engineering
+- `/inflation_analysis/` — Python code for fetching, analyzing, and plotting
+- `/charts/` — Automatically generated inflation analysis charts
+- `README.md` — Project documentation
 
-## Highlights
-- 📈 Year-over-Year Inflation Trends
-- 📈 Month-over-Month Momentum
-- 📉 Inflation vs 3-Month Moving Average
-- 🔥 Rolling Volatility of Inflation
+## 📈 Highlights
+- Year-over-Year Inflation (%) comparison
+- Month-over-Month Inflation Momentum
+- Inflation vs 3-Month Moving Average
+- 12-Month Rolling Volatility of Inflation Rates
 
-## Tools
+## 🛠️ Tools Used
 - PostgreSQL
-- Python (pandas, matplotlib, seaborn, psycopg2)
-- IMF Data
+- Python: pandas, matplotlib, seaborn, psycopg2
+- Data Source: IMF CPI Database
 
-## Author
+## 🧑‍💻 Author
 JO
 
 ---
 
-✅ This project is ready for hedge fund analyst roles, macro research positions, and quant internships.
+✅ This project is ideal for hedge fund macro research, investment analyst applications, and data science portfolios.
